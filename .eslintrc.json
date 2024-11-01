@@ -1,0 +1,46 @@
+{
+  "root": true,
+  "extends": ["next", "plugin:@typescript-eslint/recommended", "prettier", "plugin:react-hooks/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "unused-imports", "simple-import-sort", "testing-library", "react", "react-hooks"],
+  "rules": {
+    "no-unused-vars": "off",
+    "quotes": [1, "single", { "avoidEscape": true }],
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "semi": ["error", "never"],
+    "@typescript-eslint/semi": ["error", "never"],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "enableDangerousAutofixThisMayCauseInfiniteLoops": true
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ]
+}

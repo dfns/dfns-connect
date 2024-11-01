@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/pages/*": ["pages/*"],
+      "@/layouts/*": ["layouts/*"],
+      "@/styles/*": ["styles/*"],
+      "@/store/*": ["store/*"],
+      "@/public/*": ["public/*"],
+      "@/utils/*": ["utils/*"],
+      "@/providers/*": ["providers/*"],
+      "@/types/*": ["types/*"]
+    },
+    // use theses two belows for using @emotion css prop
+    "jsx": "preserve",
+    "jsxImportSource": "@emotion/react"
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
+  "exclude": ["node_modules", "e2e"],
+  "ts-node": {
+    "swc": true,
+    "compilerOptions": {
+      // compilerOptions specified here will override those declared below,
+      // but *only* in ts-node.  Useful if you want ts-node and tsc to use
+      // different options with a single tsconfig.json.
+      "isolatedModules": false
+    }
+  }
+}
